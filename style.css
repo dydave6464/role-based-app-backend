@@ -1,0 +1,260 @@
+/* General Styles */
+body {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    padding-bottom: 50px;
+}
+
+/* Page Display Rules (Phase 1 Requirement) */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Authentication State Rules (Phase 1 Requirement) */
+body.not-authenticated .role-logged-in {
+    display: none !important;
+}
+
+body.authenticated .role-logged-out {
+    display: none !important;
+}
+
+/* Admin Role Rules (Phase 1 Requirement) */
+.role-admin {
+    display: none !important;
+}
+
+body.is-admin .role-admin {
+    display: block !important;
+}
+
+/* Light Green Theme for Login/Register Buttons */
+.btn-login,
+.btn-register {
+    background-color: #4ade80 !important;
+    color: white !important;
+    padding: 8px 20px !important;
+    border-radius: 6px !important;
+    margin-left: 10px !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+    background-color: #22c55e !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.4) !important;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: #2d3748 !important;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #4ade80 !important;
+}
+
+/* Dropdown Menu - Light Green Theme */
+.dropdown-menu {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.dropdown-item {
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.dropdown-item:active {
+    background-color: #4ade80;
+    color: white;
+}
+
+/* Card Styling - Simple */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* Form Styling - Simple */
+.form-control {
+    border: 1px solid #ddd;
+}
+
+.form-control:focus {
+    border-color: #4ade80;
+    box-shadow: 0 0 0 0.2rem rgba(74, 222, 128, 0.25);
+}
+
+/* Button Styling - Light Green Theme */
+.btn-primary {
+    background-color: #4ade80;
+    border-color: #4ade80;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #22c55e;
+    border-color: #22c55e;
+}
+
+.btn-success {
+    background-color: #4ade80;
+    border-color: #4ade80;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #22c55e;
+    border-color: #22c55e;
+}
+
+/* Home Page Styling - Plain */
+#home-page {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+#home-page h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#home-page ul {
+    line-height: 1.8;
+}
+
+#home-page code {
+    background-color: #dcfce7;
+    color: #15803d;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Info Box - Light Green Theme */
+.info-box {
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.info-box strong {
+    color: #15803d;
+}
+
+/* Link Styling - Light Green Theme */
+a {
+    color: #22c55e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #16a34a;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    #home-page {
+        padding: 20px;
+    }
+    
+    #home-page h1 {
+        font-size: 1.5rem;
+    }
+    
+    .btn-login,
+    .btn-register {
+        margin: 5px !important;
+        display: block;
+        width: 100%;
+    }
+}
+
+/* ============================================
+   TOAST NOTIFICATIONS
+   ============================================ */
+
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s ease;
+}
+
+.toast-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Toast Types */
+.toast-success {
+    background-color: #22c55e;
+}
+
+.toast-error {
+    background-color: #ef4444;
+}
+
+.toast-warning {
+    background-color: #f59e0b;
+}
+
+.toast-info {
+    background-color: #3b82f6;
+}
+
+/* Mobile Toast */
+@media (max-width: 768px) {
+    .toast-notification {
+        right: 10px;
+        left: 10px;
+        top: 10px;
+    }
+}
