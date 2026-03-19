@@ -215,8 +215,8 @@ a:hover {
 
 .toast-notification {
   position: fixed;
-  top: 80px;
-  left: 87%;
+  top: 70px;
+  right: 20px;
   padding: 15px 25px;
   border-radius: 8px;
   color: white;
